@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Notes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arial&family=Courier+New&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <h1>Your Notes</h1>
+    <div class="toolbar">
+      <button onclick="formatText('bold')">Bold</button>
+      <button onclick="formatText('underline')">Underline</button>
+      <select id="fontSelector" onchange="changeFont()">
+        <option value="'Caveat', cursive">Caveat (Handwriting)</option>
+        <option value="'Dancing Script', cursive">Dancing Script (Handwriting)</option>
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="'Courier New', monospace">Courier New</option>
+      </select>
+      
+      <button onclick="downloadNote()">Download Note</button>
+      <button id="cls" >Clear Note</button>
+    </div>
+    <div id="noteArea" contenteditable="true" class="note-area" placeholder="Start typing your note..."></div>
+    <canvas id="canvas" style="display: none;"></canvas>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
